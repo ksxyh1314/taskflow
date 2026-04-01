@@ -2,10 +2,13 @@ package com.taskflow.taskflow.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.time.LocalDateTime;
 
 @Data              // Lombok自动生成 get/set/toString 方法，不用自己写
 @Entity            // 告诉JPA：这个类对应数据库的一张表
+@EqualsAndHashCode(of = "id")  // 只用id来比较，id相同才是同一个对象
 @Table(name = "users")  // 指定表名是 users
 public class User {
 
