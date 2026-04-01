@@ -31,4 +31,11 @@ public class AuthController {
         String token = userService.login(request);
         return ResponseEntity.ok(ApiResponse.success(token));
     }
+
+    @GetMapping("/test")
+    public ResponseEntity<ApiResponse<String>> test() {
+        return ResponseEntity.ok(ApiResponse.success("你好，JWT验证通过了！"));
+    }
+
+
 }
